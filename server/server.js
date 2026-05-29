@@ -13,6 +13,7 @@ const app = express();
 
 const allowedOrigins = [
   process.env.CLIENT_URL,
+  "https://taskflow-mern-iota.vercel.app",
   "http://localhost:5173",
   "http://localhost:5174",
   "http://127.0.0.1:5173",
@@ -25,10 +26,11 @@ app.use(
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error(`CORS blocked origin: ${origin}`));
+        callback(null, false);
       }
     },
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
   })
 );
 app.use(express.json());

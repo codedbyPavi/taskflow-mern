@@ -24,7 +24,7 @@ TaskFlow is a full-stack task management app with a Kanban board, analytics, and
 
 ## Screenshots
 register page 
-<img width="2553" height="1478" alt="image" src="https://github.com/user-attachments/assets/e3233c3f-b18d-4c8f-ba96-767c0c8f4d77" />
+<img width="2551" height="1469" alt="image" src="https://github.com/user-attachments/assets/17bcf1c3-f9ab-4eb5-b3a3-e21ed1ae99d3" />
 sign page
 <img width="2552" height="1473" alt="image" src="https://github.com/user-attachments/assets/7f9e7978-0bdf-4f2a-bfd9-7997f436751c" />
 board page

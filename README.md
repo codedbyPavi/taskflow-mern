@@ -158,5 +158,45 @@ task-manager/
 | `server/` | `npm start` | Production API (`node server.js`) |
 
 ## License
+## Assumptions
 
-Private / portfolio use � update as needed.
+- **Single-user context per account** — tasks are scoped to the logged-in user only; no team sharing or collaboration features are assumed in scope.
+- **No email verification** — registration is immediate; a real production app would send a confirmation email before activating the account.
+- **Due dates are optional** — tasks without a due date are valid and simply excluded from overdue calculations in the Workflow Health Monitor.
+- **Onboarding/guide tasks are synthetic** — the Workflow Health Monitor intentionally excludes seeded demo tasks so metrics reflect only real user-created tasks.
+- **MongoDB Atlas is the production database** — local development supports an in-memory MongoDB fallback, but this is not suitable for production use.
+
+---
+
+## Tradeoffs
+
+| Decision | What I chose | What I gave up | Why |
+|---|---|---|---|
+| **JWT in localStorage** | Simple, works across tabs, easy to implement | Vulnerable to XSS attacks (httpOnly cookies would be safer) | Acceptable for a portfolio project; a production app would use httpOnly cookies with CSRF protection |
+| **Client-side search** | Instant results, no extra API call | Doesn't scale beyond hundreds of tasks | Sufficient for the expected task volume; Mongo text index search would be the upgrade path |
+| **Recharts for analytics** | Zero config, React-native, small bundle | Less customisable than D3 | Faster to ship; D3 would be overkill for bar/line charts |
+| **`@dnd-kit` for drag-and-drop** | Accessible, lightweight, actively maintained | More verbose API than react-beautiful-dnd | react-beautiful-dnd is unmaintained; @dnd-kit is the community standard |
+| **Separate `client/` and `server/` folders** | Clear separation of concerns, independent deployments | No shared code/types between frontend and backend | Matches real-world MERN project structure; simplifies Vercel + Render deployment |
+| **In-memory MongoDB fallback for local dev** | Easier onboarding, no Atlas setup needed locally | Risk of masking Atlas connection failures in production | Mitigated by the `DISABLE_MEMORY_MONGO` env flag which should always be set in production |
+
+---
+
+## Technical Decisions
+
+**Why MERN?**  
+MongoDB's flexible document model suits tasks well — subtasks, metadata, and priorities can evolve without schema migrations. Express and Node give a lightweight, JavaScript-consistent API layer. React's component model maps cleanly to the Kanban board's drag-and-drop UI.
+
+**Why Vite over Create React App?**  
+Vite's dev server is significantly faster (native ESM, no bundling in dev mode) and its build output is leaner. CRA is effectively unmaintained.
+
+**Why Tailwind CSS?**  
+Utility-first CSS keeps styles colocated with components, eliminating dead CSS and reducing context switching. For a single-developer project, it's faster than maintaining a separate stylesheet architecture.
+
+**Why Render for the backend?**  
+Render's free tier supports persistent Node.js services with environment variable management and auto-deploy from GitHub — the same workflow a production team would use. Heroku's free tier was discontinued; Render is the natural replacement.
+
+**Workflow Health Monitor design**  
+The formula (`max(0, 100 − blocked×5 − overdue×3 − stuck×2)`) is weighted by severity: a blocked task is the most critical signal (completely stops progress), overdue tasks signal deadline failure, and stuck in-progress tasks signal inertia. Weights were chosen to make the score degrade meaningfully — three overdue tasks drop the score from 100 to 91, and a single blocked task from 100 to 95, reflecting real operational impact.
+
+**JWT secret rotation**  
+`JWT_SECRET` is injected via environment variable and never hardcoded. Rotating it invalidates all existing sessions — acceptable behaviour documented here so future maintainers understand the tradeoff.

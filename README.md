@@ -22,6 +22,14 @@ TaskFlow is a full-stack task management app with a Kanban board, analytics, and
 - Responsive layout (sidebar + mobile-friendly dashboard)
 - API health check (`GET /api/health`)
 
+## Screenshots
+register page 
+<img width="2553" height="1478" alt="image" src="https://github.com/user-attachments/assets/e3233c3f-b18d-4c8f-ba96-767c0c8f4d77" />
+board page
+<img width="2547" height="1461" alt="image" src="https://github.com/user-attachments/assets/1c4bf45c-da2c-4384-8b5b-1afa5a54ad7f" />
+analytics page
+<img width="2551" height="1463" alt="image" src="https://github.com/user-attachments/assets/7b1c0f0e-aabe-416b-bb0c-d637bc9ecb96" />
+
 ## Workflow Health Monitor
 
 Workflow health measures operational friction on real tasks (onboarding/guide tasks are excluded from metrics).

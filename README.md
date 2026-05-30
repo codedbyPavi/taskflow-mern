@@ -158,6 +158,8 @@ task-manager/
 | `server/` | `npm start` | Production API (`node server.js`) |
 
 ## License
+Private / portfolio use only.
+
 ## Assumptions
 
 - **Single-user context per account** — tasks are scoped to the logged-in user only; no team sharing or collaboration features are assumed in scope.

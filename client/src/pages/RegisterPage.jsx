@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import RegisterForm from "../components/auth/RegisterForm";
+import TaskFlowLogo from "../components/brand/TaskFlowLogo";
 import { useAuth } from "../hooks/useAuth";
 
 const RegisterPage = () => {
@@ -45,10 +46,8 @@ const RegisterPage = () => {
       <div className="relative z-10 w-full max-w-[420px] animate-scale-in">
         <div className="glass-card overflow-hidden rounded-4xl shadow-auth">
           <div className="border-b border-white/50 px-8 pb-8 pt-12 text-center">
-            <div className="mb-8 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-500 shadow-md">
-              <svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden>
-                <path d="M3 10L8 15.5L17 4.5" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+            <div className="mb-8 inline-flex shadow-md">
+              <TaskFlowLogo variant="auth" />
             </div>
             <h1 className="font-heading text-[26px] font-bold tracking-tight text-brand-500">TaskFlow</h1>
             <p className="mx-auto mt-4 max-w-[260px] text-[15px] leading-relaxed text-gray-500">

@@ -1,0 +1,6 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TaskFlow">
+  <rect width="48" height="48" rx="13" fill="#48426D"/>
+  <path fill="#F0C38E" d="M13.5 13.5h10.5v2.9H20.3v18.2H17.2V16.4h-3.7v-2.9z"/>
+  <path fill="#F7F4EF" d="M25.5 13.5H35v2.9h-5.3v3.5h4.6v2.9h-4.6v11.6h-2.9V13.5z"/>
+  <path stroke="#F1AA9B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M30 32.5 33.2 35.7 40 28.5"/>
+</svg>

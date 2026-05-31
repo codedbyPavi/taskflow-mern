@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
-import { CheckSquare } from "lucide-react";
 import Button from "../components/ui/Button";
+import TaskFlowLogo from "../components/brand/TaskFlowLogo";
 
 const LandingPage = () => (
   <div className="relative min-h-screen overflow-hidden bg-surface bg-auth-gradient">
     <header className="relative z-10 mx-auto flex max-w-5xl items-center justify-between px-8 py-6">
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-500 shadow-md">
-          <CheckSquare className="h-5 w-5 text-white" />
-        </div>
+        <TaskFlowLogo variant="sm" />
         <span className="font-heading text-[16px] font-semibold tracking-tight text-brand-500">TaskFlow</span>
       </div>
       <div className="flex items-center gap-2">

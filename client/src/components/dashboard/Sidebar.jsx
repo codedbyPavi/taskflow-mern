@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { BarChart2, CheckSquare, KanbanSquare, LogOut, X } from "lucide-react";
+import { BarChart2, KanbanSquare, LogOut, X } from "lucide-react";
 import { useAuth } from "../../hooks/useAuth";
+import AuthorCredit from "../brand/AuthorCredit";
+import TaskFlowLogo from "../brand/TaskFlowLogo";
 
 const navLinkClass = ({ isActive }) =>
   `flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 ease-in-out ${
@@ -22,9 +24,7 @@ const SidebarContent = ({ onNavigate }) => {
   return (
     <>
       <div className="flex h-[64px] items-center gap-3 border-b border-sidebar-border px-5">
-        <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-accent-cream/20 ring-1 ring-accent-cream/30">
-          <CheckSquare className="h-4 w-4 text-accent-cream" strokeWidth={2.5} />
-        </div>
+        <TaskFlowLogo variant="navbar" />
         <span className="font-heading text-[16px] font-semibold tracking-tight text-sidebar-text">TaskFlow</span>
       </div>
 
@@ -67,6 +67,7 @@ const SidebarContent = ({ onNavigate }) => {
         >
           <LogOut className="h-4 w-4" /> Sign out
         </button>
+        <AuthorCredit className="mt-4 px-1" />
       </div>
     </>
   );

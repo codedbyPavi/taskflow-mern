@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Menu } from "lucide-react";
+import TaskFlowLogo from "../components/brand/TaskFlowLogo";
 import Sidebar from "../components/dashboard/Sidebar";
 
 const DashboardLayout = () => {
@@ -18,6 +19,7 @@ const DashboardLayout = () => {
           >
             <Menu size={18} />
           </button>
+          <TaskFlowLogo variant="navbar" className="h-8 w-8" />
           <span className="text-[15px] font-semibold text-gray-900">TaskFlow</span>
         </div>
         <main>

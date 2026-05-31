@@ -24,16 +24,20 @@ TaskFlow is a full-stack task management app with a Kanban board, analytics, and
 
 ## Screenshots
 Register page 
-<img width="2551" height="1469" alt="image" src="https://github.com/user-attachments/assets/17bcf1c3-f9ab-4eb5-b3a3-e21ed1ae99d3" />
+<img width="2550" height="1468" alt="image" src="https://github.com/user-attachments/assets/e72279f2-d949-4eed-9f0c-e7dc4ee8afac" />
 
 Sign in page
-<img width="2552" height="1473" alt="image" src="https://github.com/user-attachments/assets/7f9e7978-0bdf-4f2a-bfd9-7997f436751c" />
+<img width="2548" height="1463" alt="image" src="https://github.com/user-attachments/assets/b7370a25-8b0e-4c81-93c3-3f204430d3da" />
 
 Board page
-<img width="2547" height="1461" alt="image" src="https://github.com/user-attachments/assets/1c4bf45c-da2c-4384-8b5b-1afa5a54ad7f" />
+<img width="2559" height="1473" alt="image" src="https://github.com/user-attachments/assets/592494e2-ff6a-41e0-9b38-0fff5b96812f" />
+<img width="2544" height="1463" alt="image" src="https://github.com/user-attachments/assets/f2375748-456b-4fd5-8780-6eea44d00e6b" />
+<img width="2558" height="1462" alt="image" src="https://github.com/user-attachments/assets/0e80e10d-fac6-419d-a2ce-0fb403d90921" />
 
 Analytics page
-<img width="2551" height="1463" alt="image" src="https://github.com/user-attachments/assets/7b1c0f0e-aabe-416b-bb0c-d637bc9ecb96" />
+<img width="2559" height="1456" alt="image" src="https://github.com/user-attachments/assets/9a4205fe-bb98-44bd-a27d-6be7a96fadb3" />
+<img width="2559" height="1467" alt="image" src="https://github.com/user-attachments/assets/766c00fd-8c06-451e-a872-671d5415f488" />
+
 
 ## Workflow Health Monitor
 
